@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import brsLogo from '../assets/brs-logo.png';
+import brsLogo from '../assets/brs-logo.gif';
 
 const Splash = () => {
   const navigate = useNavigate();

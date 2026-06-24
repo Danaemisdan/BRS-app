@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import video1 from '../assets/we1.mp4';
 import video2 from '../assets/we2.mp4';
-import brsLogo from '../assets/brs-logo.png';
+import brsLogo from '../assets/brs-logo.gif';
 
 const videos = [video1, video2];
 

@@ -14,7 +14,7 @@ import poster5 from '../assets/posters/poster5.jpg';
 import video1 from '../assets/we1.mp4';
 import video2 from '../assets/we2.mp4';
 import video3 from '../assets/we3.mp4';
-import brsLogo from '../assets/brs-logo.png';
+import brsLogo from '../assets/brs-logo.gif';
 import StoryViewer from './StoryViewer';
 
 const VoterDashboard = () => {

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { X, Users, AlertTriangle, UserPlus, Camera, Upload, LogOut, Video, UserCircle, Search, ChevronLeft, Shield, CheckCircle, Menu, Home, MapPin, CreditCard, Share2, Edit2, Crown, Settings , Image } from 'lucide-react';
-import brsLogo from '../assets/brs-logo.png';
+import brsLogo from '../assets/brs-logo.gif';
 import dummyVoters from '../assets/dummy_voters.json';
 import harshaImg from '../assets/Harsha.jpeg';
 
