@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import video1 from '../assets/we1.mp4';
 import video2 from '../assets/we2.mp4';
-import brsLogoGif from '../assets/brs-logo.gif';
+import brsLogo from '../assets/brs-logo.png';
 
 const videos = [video1, video2];
 
@@ -106,7 +106,7 @@ const Login = () => {
               <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-100px', marginBottom: '1rem', position: 'relative', zIndex: 30 }}>
                 <motion.img 
                   layoutId="brs-logo"
-                  src={brsLogoGif} 
+                  src={brsLogo} 
                   alt="BRS Logo"
                   initial={{ opacity: 1 }}
                   animate={{ opacity: 1 }}

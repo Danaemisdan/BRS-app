@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { X, CheckCircle, XCircle, Search, UserCheck, Shield, LogOut, UserCircle, ListChecks, Users, ChevronLeft, Video, Menu, Home, MapPin, CreditCard, Share2, Edit2, Crown, Settings, Camera, Upload, UserPlus, AlertTriangle , Image } from 'lucide-react';
-import brsLogoGif from '../assets/brs-logo.gif';
+import brsLogo from '../assets/brs-logo.png';
 import dummyVoters from '../assets/dummy_voters.json';
 import harshaImg from '../assets/Harsha.jpeg';
 
@@ -34,10 +34,10 @@ const BLODashboard = () => {
   const [isAddingVoter, setIsAddingVoter] = useState(false);
 
   const reelsData = [
-    { src: video3, avatar: brsLogoGif, username: 'BRS Party', time: 'Just now', caption: 'గ్యారంటీ కార్డులతో కమల్ హాసన్ ను మైమరిపించిన బట్టి విక్రమార్క' },
+    { src: video3, avatar: brsLogo, username: 'BRS Party', time: 'Just now', caption: 'గ్యారంటీ కార్డులతో కమల్ హాసన్ ను మైమరిపించిన బట్టి విక్రమార్క' },
 
-    { src: video1, avatar: brsLogoGif, username: 'BRS Party', time: '2h ago', caption: 'Latest updates from the party office! Stay tuned for more reels. 🩷 #BRS #Telangana' },
-    { src: video2, avatar: brsLogoGif, username: 'KCR Fans', time: '5h ago', caption: 'Jai Telangana! Jai KCR! 🚗✨' }
+    { src: video1, avatar: brsLogo, username: 'BRS Party', time: '2h ago', caption: 'Latest updates from the party office! Stay tuned for more reels. 🩷 #BRS #Telangana' },
+    { src: video2, avatar: brsLogo, username: 'KCR Fans', time: '5h ago', caption: 'Jai Telangana! Jai KCR! 🚗✨' }
   ];
 
   const requests = [
@@ -123,7 +123,7 @@ const BLODashboard = () => {
           <div className="flex items-center gap-3">
             <motion.img 
               layoutId="brs-logo"
-              src={brsLogoGif}
+              src={brsLogo}
               alt="BRS Logo"
               style={{ width: '72px', height: '72px', objectFit: 'contain' }}
             />
@@ -719,7 +719,7 @@ const BLODashboard = () => {
                     <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '10px', fontWeight: '700', margin: 0, fontFamily: 'Inter, sans-serif', textTransform: 'uppercase', letterSpacing: '0.05em' }}>BRS Pro Member</p>
                   </div>
                 </div>
-                <img src={brsLogoGif} alt="BRS" style={{ width: '48px', height: '48px', borderRadius: '50%', border: '2px solid rgba(255,255,255,0.5)', objectFit: 'cover', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }} />
+                <img src={brsLogo} alt="BRS" style={{ width: '48px', height: '48px', borderRadius: '50%', border: '2px solid rgba(255,255,255,0.5)', objectFit: 'cover', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }} />
               </div>
             </div>
           </div>

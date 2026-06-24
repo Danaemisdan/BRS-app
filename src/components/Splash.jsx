@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import brsLogoGif from '../assets/brs-logo.gif';
+import brsLogo from '../assets/brs-logo.png';
 
 const Splash = () => {
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ const Splash = () => {
       >
         <motion.img 
           layoutId="brs-logo"
-          src={brsLogoGif} 
+          src={brsLogo} 
           alt="BRS Logo" 
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import brsLogoGif from '../assets/brs-logo.gif';
+import brsLogo from '../assets/brs-logo.png';
 import regionBgVideo from '../assets/region-bg-2.mp4';
 import villagesData from '../assets/villages.json';
 
@@ -57,7 +57,7 @@ const RegionSelection = () => {
               <div style={{ display: 'flex', justifyContent: 'center', marginTop: '-100px', marginBottom: '1rem', position: 'relative', zIndex: 30 }}>
                 <motion.img 
                   layoutId="brs-logo"
-                  src={brsLogoGif} 
+                  src={brsLogo} 
                   alt="BRS Logo" 
                   initial={{ opacity: 1 }}
                   animate={{ opacity: 1 }}
