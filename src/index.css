@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* BRS Party Theme Colors */
+  --color-primary: #E6006C; 
+  --color-primary-dark: #8A0041;
+  --color-primary-light: #FF66B2;
+  --color-secondary: #ffffff;
+  
+  --color-background: #0d0006; 
+  --color-surface: rgba(255, 255, 255, 0.95);
+  --color-text: #1e293b; 
+  --color-text-muted: #64748b;
+  
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+
+  --font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  --border-radius: 20px;
+  --shadow-glow: 0 8px 32px rgba(255, 0, 127, 0.4);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shimmer-once {
+  animation: svgShimmer 2s ease-in-out forwards;
+}
+@keyframes svgShimmer {
+  0% { filter: brightness(1); }
+  25% { filter: brightness(2.5) drop-shadow(0 0 15px rgba(255,215,0,0.8)); transform: scale(1.05); }
+  100% { filter: brightness(1); transform: scale(1); }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif !important;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { min-height: 100vh; display: flex; flex-direction: column; }
+
+button { background: none; border: none; cursor: pointer; font-family: inherit; color: inherit; }
+input { font-family: inherit; }
+
+/* =========================================
+   PREMIUM GLASSMORPHISM (Dark/Pink Bg)
+   ========================================= */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1); /* Brighter base */
+  backdrop-filter: blur(24px); /* Smoother frost */
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Stronger bright border */
+  border-top: 1px solid rgba(255, 255, 255, 0.5); /* Stronger top light reflection */
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.05); /* Added glow */
+  color: white;
+}
+
+/* Liquid Glass Button (Apple Tahoe style) */
+.btn-liquid-glass {
+  background: rgba(255, 255, 255, 0.05); /* Extremely transparent */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  color: white;
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-liquid-glass:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-liquid-glass.active {
+  background: rgba(255, 0, 127, 0.15); /* Subtle pink tint when active */
+  border: 1px solid rgba(255, 102, 178, 0.3);
+  border-top: 1px solid rgba(255, 150, 200, 0.5);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4),
+    inset 0 0 10px rgba(255, 0, 127, 0.3); /* Inner glow */
+}
+
+/* Glass Input */
+.input-glass {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.05); /* Bright subtle glass */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.4); /* Crisp edge */
+  border-radius: 12px;
+  color: white;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-glass::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-glass:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 102, 178, 0.6);
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.3), 0 0 0 3px rgba(255, 0, 127, 0.3);
+}
+
+/* The standard pink button but upgraded to glass */
+.btn-primary-glass {
+  background: rgba(255, 0, 127, 0.85); /* Vibrant solid base */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 102, 178, 0.5);
+  border-top: 1px solid rgba(255, 200, 220, 0.9); /* Strong white highlight */
+  border-bottom: 1px solid rgba(150, 0, 70, 0.8);
+  color: white;
+  border-radius: 16px;
+  box-shadow: 
+    0 8px 24px rgba(255, 0, 127, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.6),
+    inset 0 -2px 4px rgba(150, 0, 70, 0.4);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glossy jelly reflection on the button */
+.btn-primary-glass::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 10%; right: 10%;
+  height: 35%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0));
+  border-radius: 50% 50% 0 0;
+  pointer-events: none;
+}
+
+.btn-primary-glass:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 20, 140, 0.95);
+  box-shadow: 
+    0 12px 28px rgba(255, 0, 127, 0.6),
+    inset 0 2px 4px rgba(255, 255, 255, 0.8),
+    inset 0 -2px 4px rgba(150, 0, 70, 0.5);
+}
+
+/* =========================================
+   STANDARD UTILITIES
+   ========================================= */
+.container { width: 100%; max-width: 600px; margin: 0 auto; padding: 1.5rem; }
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 0.5rem; } .gap-3 { gap: 0.75rem; } .gap-4 { gap: 1rem; }
+.w-full { width: 100%; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mt-2 { margin-top: 0.5rem; }
+
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+
+.text-white { color: white; }
+.text-white-muted { color: rgba(255, 255, 255, 0.7); }
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.overflow-hidden { overflow: hidden; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+.delay-100 { animation-delay: 100ms; opacity: 0; }
+
+/* Hide Scrollbar */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Keep old classes for other dashboards so they don't break immediately */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0,0,0,0.05);
+  border-radius: 20px;
+}
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 1.5rem; border-radius: 50px; font-weight: 600; }
+.btn-primary { background: var(--color-primary); color: white; }
+.btn-secondary { background: white; color: var(--color-primary); border: 1px solid var(--color-primary); }
+.btn-block { width: 100%; }
+.input-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem; }
+.input-label { font-size: 0.875rem; font-weight: 600; color: var(--color-text-muted); }
+.input-field { padding: 1rem; border: 1px solid #e2e8f0; border-radius: 16px; width: 100%; }
+.text-primary { color: var(--color-primary); }
+.text-muted { color: var(--color-text-muted); }
+.text-gradient { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.border-b { border-bottom: 1px solid rgba(0,0,0,0.05); }
+.badge { padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; }
+.badge-success { background: rgba(16, 185, 129, 0.1); color: var(--color-success); }
+.badge-warning { background: rgba(245, 158, 11, 0.1); color: var(--color-warning); }
+
+/* Gold Shimmer Effect */
+.gold-shimmer { position: absolute; overflow: hidden; mix-blend-mode: color-dodge; pointer-events: none; }
+.gold-shimmer::before {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(to bottom right, rgba(255, 215, 0, 0) 35%, rgba(255, 225, 100, 0.8) 50%, rgba(255, 255, 255, 0.9) 52%, rgba(255, 225, 100, 0.8) 54%, rgba(255, 215, 0, 0) 65%);
+  transform: rotate(30deg) translateX(-100%); animation: shimmerSweep 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes shimmerSweep { 0% { transform: rotate(30deg) translateX(-100%); } 100% { transform: rotate(30deg) translateX(100%); } }
+
+/* =========================================
+   MAGIC LINK COMPONENT STYLES
+   ========================================= */
+
+.magic-card {
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.magic-icon-wrapper {
+  margin: -4rem auto 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.magic-tabs {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05); /* Lighter background */
+  padding: 0.25rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.magic-tab {
+  flex: 1;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  transition: all 0.2s;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+.magic-tab.active {
+  background: rgba(255, 0, 127, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 0, 127, 0.4);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 0, 127, 0.2), inset 0 0 10px rgba(255, 0, 127, 0.1);
+}
+.magic-tab:not(.active):hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.magic-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.magic-input {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25); /* Brighter border */
+  background: rgba(255, 255, 255, 0.1); /* Brighter bg */
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: white;
+  transition: all 0.2s;
+}
+
+.magic-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.magic-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 0, 127, 0.3);
+}
+
+.magic-btn {
+  width: 100%;
+  height: 44px;
+  background: rgba(255, 0, 127, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 0, 127, 0.5);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(255, 0, 127, 0.25), inset 0 0 10px rgba(255, 255, 255, 0.1);
+  margin-top: 1rem;
+}
+
+.magic-btn:hover {
+  background: rgba(255, 0, 127, 0.45);
+  border-color: rgba(255, 0, 127, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(255, 0, 127, 0.35), inset 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes swipeUp {
+  0% { transform: translateY(40px) scale(0.9); opacity: 0; }
+  30% { opacity: 1; transform: translateY(10px) scale(1); }
+  70% { opacity: 1; transform: translateY(-20px) scale(1); }
+  100% { transform: translateY(-40px) scale(0.9); opacity: 0; }
+}
+
+.animate-swipe {
+  animation: swipeUp 2.5s infinite ease-in-out;
+}
